@@ -1,0 +1,62 @@
+body {
+    font-family: Montserrat;
+    background-color: #E7FAFF
+}
+
+.content {
+    margin-bottom: 100px;
+}
+
+.intro {
+    margin-top: 0px;
+}
+
+.nav-link:hover {
+    color: green;
+}
+
+.dropdown {
+    color: black;
+    font-family: 'Barlow'
+    
+   
+}
+
+.nav {
+    background-color: white;
+    margin-bottom: 25px;
+    font-family: 'Barlow'
+}
+
+.navbar-brand {
+    font-family: 'Barlow';
+}
+
+#header {
+    
+    background: url("imgs/headerz.jpeg");
+    width: 100%;
+    height: 52rem;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    
+   
+    
+}
+
+.display-1 {
+    margin-top: 100px;
+   justify-content: center;
+    font-family: 'Barlow';
+    color: white;
+    
+}
+.display-2 {
+    margin-top: 50px;
+   justify-content: center;
+    font-family: 'Barlow';
+    font-size: 55px;
+    color: white;
+    
+}
