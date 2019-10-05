@@ -30,10 +30,11 @@ function ready () {
     
 }
 
+
 const addCartButtonsClicked = (event) => {
-    alert("Item was added to cart")
+    
     let button = event.target
-    let shopItem = button.parentElement.parentElement.parentElement
+    let shopItem = button.parentElement.parentElement
     let title = shopItem.getElementsByClassName('product-title')[0].innerText
     let price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
 
@@ -51,9 +52,9 @@ const addItemsToCart = (title, price) => {
     for(let i = 0; i < cartItemNames.length; i++){
         if(cartItemNames[i].innerText === title){
             alert("This item was already added to cart")
-            
+            return
         }
-        return
+        
     }
     let cartRowContents = ` 
     <div class="cart-item">
