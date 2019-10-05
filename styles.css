@@ -18,17 +18,19 @@ body {
 
 .navbar {
     background-color: white;
-    
-    font-family: 'Barlow'
+    font-family: 'Barlow';
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .nav-item{
-    margin-right: 50px;
+    margin-right: 25px;
 }
 
 .navbar-brand {
     font-family: 'Hanalei Fill', cursive;
-    padding-right: 900px;
     margin-left: 10px;
     font-size: 25px;
 }
@@ -223,12 +225,25 @@ body {
 }
 
 .about-profile{
-  
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 750px;
+    width: 50%;
+    height: 50%;
 }
 
-@media (max-width: ){
+.about-content {
+    display: flex;
+    justify-content: center;
+}
+.title {
+    margin-bottom: 0px;
+}
+
+/* @media (max-width: ){
     .img {
       width: 100%;
       height: 50%;
   }
-}
+} */

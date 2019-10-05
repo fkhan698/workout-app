@@ -31,7 +31,7 @@ function ready () {
 }
 
 const addCartButtonsClicked = (event) => {
-
+    alert("Item was added to cart")
     let button = event.target
     let shopItem = button.parentElement.parentElement.parentElement
     let title = shopItem.getElementsByClassName('product-title')[0].innerText
