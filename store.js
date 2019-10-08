@@ -1,8 +1,11 @@
+//Makes sure document loads
 if(document.readyState = 'loading'){
     document.addEventListener('DOMContentLoaded', ready)
 } else {
     ready();
 }
+
+// Gets all functions working.
  
 function ready () {
 
@@ -30,9 +33,9 @@ function ready () {
     
 }
 
-
+// Adds functionality to add-cart button. Takes in the product name and price, puts that into an argument and runs addItemsToCart function
 const addCartButtonsClicked = (event) => {
-    
+    alert("Item were added to cart")
     let button = event.target
     let shopItem = button.parentElement.parentElement
     let title = shopItem.getElementsByClassName('product-title')[0].innerText
@@ -44,6 +47,7 @@ const addCartButtonsClicked = (event) => {
     updateCartTotal()
 }
 
+// Takes in title and price arguments and creates a cart-row element in the cart section
 const addItemsToCart = (title, price) => {
     let cartRow = document.createElement('div')
      cartRow.classList.add('cart-row')
@@ -56,6 +60,7 @@ const addItemsToCart = (title, price) => {
         }
         
     }
+    // Creates cart row element
     let cartRowContents = ` 
     <div class="cart-item">
         <span class="cart-item-title">${title}</span>
@@ -71,6 +76,7 @@ const addItemsToCart = (title, price) => {
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click',removeCartItems)
 }
 
+// Removes items from Cart
 const removeCartItems = () => {
     const buttonClick = event.target
     buttonClick.parentElement.parentElement.remove();
@@ -78,6 +84,7 @@ const removeCartItems = () => {
     updateCartTotal()
 }
 
+// Allows to change quantity of item and total of cart
 const quantityChanged = (event) => {
     let input = event.target
     if(isNaN(input.value) || input.value <= 0){
@@ -86,8 +93,8 @@ const quantityChanged = (event) => {
     updateCartTotal()
 }
 
+// Removes cart items after they are purchased
 const purchaseItems = () => {
-    alert("Items were purchased")
     let cartItems = document.getElementsByClassName('cart-items')[0]
     while(cartItems.hasChildNodes()){
         cartItems.removeChild(cartItems.firstChild)

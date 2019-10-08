@@ -1,6 +1,7 @@
 body {
     font-family: Montserrat;
-    background-color: #E7FAFF
+    background-color: #E7FAFF;
+    --nav-load-time: 600ms;
 }
 
 .content {
@@ -23,6 +24,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1;
+    animation: nav-load var(--nav-load-time) ease-out;
 }
 
 .nav-item{
@@ -50,6 +52,7 @@ body {
    justify-content: center;
    font-family: 'Hanalei Fill', cursive;
     color: white;
+    animation: header-load var(--nav-load-time) ease-out;
     
 }
 .display-2 {
@@ -58,6 +61,7 @@ body {
    font-family: 'Hanalei Fill', cursive;
     font-size: 55px;
     color: white;
+    animation: header-load var(--nav-load-time) ease-out;
     
 }
 
@@ -86,6 +90,10 @@ body {
 .card-img-top {
     height: 100%;
     width: 100%;
+    
+}
+#thumbnail {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 15px 15px rgba(0,0,0,0.23);
 }
 
 .product-title {
@@ -104,6 +112,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
+    animation: product-load var(--nav-load-time) ease-in
 }
 .merch {
     display: flex;
@@ -224,6 +233,8 @@ body {
     transition: all 0.20s ease;
 }
 
+/* About Page */
+
 .about-profile{
     border-color: black;
     border-width: 3px;
@@ -238,12 +249,42 @@ body {
     justify-content: center;
 }
 .title {
-    margin-bottom: 0px;
+    margin-bottom: 50px;
 }
 
-/* @media (max-width: ){
-    .img {
-      width: 100%;
-      height: 50%;
-  }
-} */
+.jumbotron {
+    margin-top: 40px;
+    font-family: 'Barlow';
+    border-style: solid;
+    border-color: black;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    font-family: 'Barlow';
+    padding: 5px;
+    background-color: gray;
+    color: white;
+}
+
+/* Animations */
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translatey(0);
+    }
+}
+
+@keyframes header-load {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translatey(0);
+    }
+}
+
+
+
