@@ -102,6 +102,7 @@ const purchaseItems = () => {
     updateCartTotal()
 }
 
+// Updates cart total according to price and quantity
 const updateCartTotal = () => {
     let cartItemContainer = document.getElementsByClassName('cart-items')[0]
     let cartRows = cartItemContainer.getElementsByClassName('cart-row')
