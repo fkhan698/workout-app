@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/fkhan698/workout-app/issues"
   },
-  "homepage": "https://github.com/fkhan698/workout-app#readme"
+  "homepage": "https://github.com/fkhan698/workout-app#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "stripe": "^7.10.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.1.0"
+  }
 }
