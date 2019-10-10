@@ -1,0 +1,55 @@
+{
+    "products":[
+        {
+        "id": 1,
+        "name": "Tadpole Timmy",
+        "price": 1500,
+        "imgName": "bottle.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Betafish Bradley",
+            "price": 3000,
+            "imgName": "bottle.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Alphabeast Andy",
+            "price": 5000,
+            "imgName": "bottle.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Alphabeast Andy",
+            "price": 5000,
+            "imgName": "bottle.jpeg"
+        }
+
+    ],
+    "merch":[
+        {
+            "id": 5,
+            "name": "T-Shirt",
+            "price": 1500,
+            "imgName": "bottle.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "Longsleeve-Shirt",
+            "price": 2500,
+            "imgName": "bottle.jpeg"
+        },
+        {
+            "id": 7,
+            "name": "Hoodie",
+            "price": 4000,
+            "imgName": "bottle.jpeg"
+        },
+        {
+            "id": 8,
+            "name": "Gymbag",
+            "price": 7500,
+            "imgName": "bottle.jpeg"
+        }
+    ]
+}

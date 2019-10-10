@@ -80,7 +80,7 @@ const addItemsToCart = (title, price) => {
 const removeCartItems = () => {
     const buttonClick = event.target
     buttonClick.parentElement.parentElement.remove();
-    console.log(priceElement * quantityElement)
+
     updateCartTotal()
 }
 
