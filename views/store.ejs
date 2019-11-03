@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Roid Ragerz</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,117 +52,46 @@
 
     <section class="container products-section">
        
-            
-             <% items.products.forEach(function(item){ %>
-                    <div class="product">
-                        <h1 class="product-title">Tadpool Timothy</h1>
-                        <div class="product-body">
-                            <img id="thumbnail" class="card-img-top" src="imgs/bottle.jpeg" alt="">
-                        </div>
-                            <div class="row title-button ml-5 mt-4">
-                                <span class="shop-item-price">$15.00</span>
-                                <button type="button" class="add-cart">Add to Cart</button>
+                <% items.products.forEach(function(item){ %>
+                    
+                
+                        <div class="product" data-item-id="<%= item.id %>">
+                            <h1 class="product-title"><%= item.name %></h1>
+                            <div class="product-body">
+                                <img id="thumbnail" class="card-img-top" src="imgs/<%=item.imgName %>" alt="">
+                            </div>
+                                <div class="row title-button ml-5 mt-4">
+                                    <span class="shop-item-price">$<%= item.price / 100 %></span>
+                                    <button type="button" class="add-cart">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <h1 class="product-title">Betafish Bradley</h1>
-                    <div class="product-body">
-                        <img id="thumbnail" class="card-img-top" src="imgs/bottle.jpeg" alt="">
-                    </div>    
-                        <div class="row title-button ml-5 mt-4">
-                            <span class="shop-item-price">$30.00</span>
-                            <button type="button" class="add-cart">Add to Cart</button>
-                        </div>
-                </div>
-            </div>
-            <!-- <div class="col-lg-6 "> -->
-                <div class="product">
-                    <h1 class="product-title">Alphabeast Andy</h1>
-                    <div class="product-body">
-                        <img id="thumbnail" class="card-img-top" src="imgs/bottle.jpeg" alt="">
-                    </div>
-                    <div class="row title-button ml-5 mt-4">
-                        <span class="shop-item-price">$50.00</span>
-                        <button type="button" class="add-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-lg-6 "> -->
-                <div class="product">
-                    <h1 class="product-title">Freakbeast Freddy</h1>
-                        <div class="product-body">
-                            <img id="thumbnail" class="card-img-top" src="imgs/bottle.jpeg" alt="">
-                        </div>
-                        <div class="row title-button  ml-5 mt-4">
-                            <span class="shop-item-price">$80.00</span>
-                            <button type="button" class="add-cart">Add to Cart</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            
-    
+                    
+                <% }) %>
     </section>
-
     <header>
             <div class="title">Merch</div>
     </header>
-
-
     <section class="container products-section">
             <div class="row">
+
+                   
+                <% items.merch.forEach(function(item){ %>
+                    
                 
-                        <div class="product">
-                            <h1 class="product-title">T-Shirt</h1>
-                            <div class="product-body">
-                                <img  id="thumbnail" class="card-img-top" src="imgs/black-tshirt-front.png" alt="">
-                            </div>
-                            <div class="row ml-5 mt-4">
-                                <span class="shop-item-price">$15.00</span>
+                    <div class="product" data-item-id="<%= item.id %>">
+                        <h1 class="product-title"><%= item.name %></h1>
+                        <div class="product-body">
+                            <img id="thumbnail" class="card-img-top" src="imgs/<%=item.imgName %>" alt="">
+                        </div>
+                            <div class="row title-button ml-5 mt-4">
+                                <span class="shop-item-price">$<%= item.price / 100 %></span>
                                 <button type="button" class="add-cart">Add to Cart</button>
                             </div>
                         </div>
                     </div>
-                   
-                        <div class="product">
-                            <h1 class="product-title">Longsleve Shirt</h1>
-                            <div class="product-body">
-                                <img id="thumbnail" class="card-img-top" src="imgs/longsleeve-shirt-white.png" alt="">
-                             </div>
-                                <div class="row ml-5 mt-4">
-                                    <span class="shop-item-price">$25.00</span>
-                                    <button type="button" class="add-cart">Add to Cart</button>
-                                </div>
-                        </div>
-                    </div>
-                   
-                        <div class="product">
-                            <h1 class="product-title">Hoodie</h1>
-                            <div class="product-body">
-                                <img id="thumbnail" class="card-img-top" src="imgs/charcoal-hoodie.png" alt="">
-                            </div>
-                                <div class="row ml-5 mt-4">
-                                    <span class="shop-item-price">$40.00</span>
-                                    <button type="button" class="add-cart">Add to Cart</button>
-                                </div>
-                        </div>
-                        <div class="product">
-                            <h1 class="product-title">Gymbag</h1>
-                            <div class="product-body">
-                                <img id="thumbnail" class="card-img-top" src="imgs/gymbag.png" alt="">
-                            </div>
-                                <div class="row ml-5 mt-4">
-                                    <span class="shop-item-price">$75.00</span>
-                                    <button type="button" class="add-cart">Add to Cart</button>
-                                </div>
-                        </div>
-                    </div>
-
-
+                
+            <% }) %>
                  
     </section>
     <section class="container shopping-cart">
@@ -175,21 +105,15 @@
             
    
         </div>
-
         
-
         <div class="cart-total">
             <strong class="cart-total-title">Total</strong>
             <span class="cart-total-price">$0</span>
         </div>
-
         <button id="purchase-button" type="button" class=" btn-lg">Purchase</button>
-
     </section>
-
 </body>
 <script src="store.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js'></script>
-
 </html>

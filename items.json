@@ -20,8 +20,8 @@
         },
         {
             "id": 4,
-            "name": "Alphabeast Andy",
-            "price": 5000,
+            "name": "Freakbeast Freddy",
+            "price": 7000,
             "imgName": "bottle.jpeg"
         }
 
@@ -31,25 +31,25 @@
             "id": 5,
             "name": "T-Shirt",
             "price": 1500,
-            "imgName": "bottle.jpeg"
+            "imgName": "black-tshirt-front.png"
         },
         {
             "id": 6,
             "name": "Longsleeve-Shirt",
             "price": 2500,
-            "imgName": "bottle.jpeg"
+            "imgName": "longsleeve-shirt-white.png"
         },
         {
             "id": 7,
             "name": "Hoodie",
             "price": 4000,
-            "imgName": "bottle.jpeg"
+            "imgName": "charcoal-hoodie.png"
         },
         {
             "id": 8,
             "name": "Gymbag",
             "price": 7500,
-            "imgName": "bottle.jpeg"
+            "imgName": "gymbag.png"
         }
     ]
 }
