@@ -40,17 +40,18 @@ const addCartButtonsClicked = (event) => {
     let shopItem = button.parentElement.parentElement
     let title = shopItem.getElementsByClassName('product-title')[0].innerText
     let price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-
+    let id = shopItem.dataset.itemId
     
 
-    addItemsToCart(title, price)
+    addItemsToCart(title, price, id)
     updateCartTotal()
 }
 
 // Takes in title and price arguments and creates a cart-row element in the cart section
-const addItemsToCart = (title, price) => {
+const addItemsToCart = (title, price, id) => {
     let cartRow = document.createElement('div')
      cartRow.classList.add('cart-row')
+     cartRow.dataset.itemId = id;
     let cartItems = document.getElementsByClassName('cart-items')[0]
     let cartItemNames = cartItems.getElementsByClassName('product-title')
     for(let i = 0; i < cartItemNames.length; i++){
@@ -93,11 +94,34 @@ const quantityChanged = (event) => {
     updateCartTotal()
 }
 
-let stripeHandler = StripeCheckout.configure({
+const stripeHandler = StripeCheckout.configure({
     key: stripePublicKey,
     locale: 'auto',
     token: function(token) {
-        console.log(token)
+        let items = []
+        let cartItemContainer = document.getElementsByClassName('cart-items')[0]
+        let cartRows = cartItemContainer.getElementsByClassName('cart-row')
+        for(let i = 0; i < cartRows.length; i++){
+            let cartRow = cartRows[i]
+            let quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+            let quantity = quantityElement.value
+            let id = cartRow.dataset.itemId
+            items.push({
+                id: id,
+                quantity: quantity
+            })
+        }
+        fetch('/purchase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                stripeTokenId: token.id,
+                items: items
+            })
+        })
     }
 })
 
