@@ -94,23 +94,24 @@ const quantityChanged = (event) => {
     updateCartTotal()
 }
 
-const stripeHandler = StripeCheckout.configure({
+var stripeHandler = StripeCheckout.configure({
     key: stripePublicKey,
-    locale: 'auto',
+    locale: 'en',
     token: function(token) {
-        let items = []
-        let cartItemContainer = document.getElementsByClassName('cart-items')[0]
-        let cartRows = cartItemContainer.getElementsByClassName('cart-row')
-        for(let i = 0; i < cartRows.length; i++){
-            let cartRow = cartRows[i]
-            let quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-            let quantity = quantityElement.value
-            let id = cartRow.dataset.itemId
+        var items = []
+        var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+        var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+        for (var i = 0; i < cartRows.length; i++) {
+            var cartRow = cartRows[i]
+            var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+            var quantity = quantityElement.value
+            var id = cartRow.dataset.itemId
             items.push({
                 id: id,
                 quantity: quantity
             })
         }
+
         fetch('/purchase', {
             method: 'POST',
             headers: {
@@ -121,17 +122,23 @@ const stripeHandler = StripeCheckout.configure({
                 stripeTokenId: token.id,
                 items: items
             })
+        }).then(function(res) {
+            return res.json()
+        }).then(function(data) {
+            alert(data.message)
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            while (cartItems.hasChildNodes()) {
+                cartItems.removeChild(cartItems.firstChild)
+            }
+            updateCartTotal()
+        }).catch(function(error) {
+            console.error(error)
         })
     }
 })
 
 // Removes cart items after they are purchased
 const purchaseItems = () => {
-    // let cartItems = document.getElementsByClassName('cart-items')[0]
-    // while(cartItems.hasChildNodes()){
-    //     cartItems.removeChild(cartItems.firstChild)
-    // }
-    // updateCartTotal()
 
     let priceElement = document.getElementsByClassName('cart-total-price')[0]
     let price = parseFloat(priceElement.innerText.replace('$', '')) * 100
