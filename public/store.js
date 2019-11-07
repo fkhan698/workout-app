@@ -93,13 +93,27 @@ const quantityChanged = (event) => {
     updateCartTotal()
 }
 
+let stripeHandler = StripeCheckout.configure({
+    key: stripePublicKey,
+    locale: 'auto',
+    token: function(token) {
+        console.log(token)
+    }
+})
+
 // Removes cart items after they are purchased
 const purchaseItems = () => {
-    let cartItems = document.getElementsByClassName('cart-items')[0]
-    while(cartItems.hasChildNodes()){
-        cartItems.removeChild(cartItems.firstChild)
-    }
-    updateCartTotal()
+    // let cartItems = document.getElementsByClassName('cart-items')[0]
+    // while(cartItems.hasChildNodes()){
+    //     cartItems.removeChild(cartItems.firstChild)
+    // }
+    // updateCartTotal()
+
+    let priceElement = document.getElementsByClassName('cart-total-price')[0]
+    let price = parseFloat(priceElement.innerText.replace('$', '')) * 100
+    stripeHandler.open({
+        amount: price
+    })
 }
 
 // Updates cart total according to price and quantity
@@ -121,6 +135,3 @@ const updateCartTotal = () => {
     total = Math.round(total * 100) / 100;
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
-
-
-
