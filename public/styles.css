@@ -48,7 +48,7 @@ body {
 }
 
 .display-1 {
-    margin-top: 100px;
+    margin-top: 170px;
    justify-content: center;
    font-family: 'Hanalei Fill', cursive;
     color: white;
@@ -136,6 +136,77 @@ body {
   }
 }
 
+.icon{
+    font-size: 40px;
+    
+}
+
+.icon-boxes {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 100px;
+}
+#icon-h4-text {
+    font-family: 'Barlow';
+}
+#icon-p-text{
+    font-family: 'Barlow';
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.img-fluid {
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    width: 100%;
+    border-radius: 25px;
+    height: 500px;
+}
+
+.gallery {
+    margin-top: 200px;
+}
+
+.lead{
+    font-family: 'Barlow'
+}
+
+#gallery-h2 {
+    font-family: 'Hanalei Fill', cursive;
+}
+
+#quote {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Barlow';
+}
+
+.customers{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.customer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+
 
 .title{
     text-align: center;
@@ -189,7 +260,6 @@ body {
 .merch {
     display: flex;
     justify-content: center;
-
     flex-wrap: wrap;
 }
 
