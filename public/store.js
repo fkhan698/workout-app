@@ -140,8 +140,8 @@ var stripeHandler = StripeCheckout.configure({
 // Removes cart items after they are purchased
 const purchaseItems = () => {
 
-    // let priceElement = document.getElementsByClassName('cart-total-price')[0]
-    // let price = parseFloat(priceElement.innerText.replace('$', '')) * 100
+    let priceElement = document.getElementsByClassName('cart-total-price')[0]
+    let price = parseFloat(priceElement.innerText.replace('$', '')) * 100
     stripeHandler.open({
         amount: price
     })
