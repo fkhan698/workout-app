@@ -11,6 +11,7 @@ console.log(stripeSecretKey ,stripePublicKey)
 
 
 const express = require('express')
+const PORT = process.env.PORT || 3000;
 const app = express()
 const fs = require('fs')
 const stripe = require('stripe')(stripeSecretKey)
