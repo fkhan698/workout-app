@@ -65,6 +65,13 @@ body {
     
 }
 
+@media (max-width: 500px){
+    .display-1{ 
+        margin-top: 10px;
+    }
+  }
+  
+
 /* CSS Animation for Title of Home Page */
 .vibrate-1 {
 	-webkit-animation: vibrate-1 0.3s linear infinite both;
@@ -163,6 +170,15 @@ body {
     margin-top: 30px;
 }
 
+/* @media (max-width: 500px){
+    .icon-boxes{ 
+        display:flex;
+        flex-direction: column;
+    }
+  } */
+ 
+ 
+
 .img-fluid {
     border-color: #000000;
     border-width: 2px;
@@ -188,6 +204,7 @@ body {
     text-align: center;
     font-size: 25px;
     font-family: 'Barlow';
+    
 }
 
 .customers{
@@ -195,6 +212,7 @@ body {
     align-content: center;
     justify-content: center;
     justify-content: space-around;
+    margin-top: 100px;
 }
 
 .customer {
@@ -204,6 +222,34 @@ body {
     text-align: center;
     margin-top: 100px;
 }
+
+.customer-profile{
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 100px;
+    width: 100%;
+    height: 50%;
+}
+
+@media (max-width: 702px){
+    .customers{ 
+        display:flex;
+        flex-direction: column;
+    }
+    .icon-boxes{ 
+        display:flex;
+        flex-direction: column;
+    }
+    .customer-profile{
+        border-radius: 500px;
+        height: 75%;
+        width: 75%
+
+    }
+
+  }
+
 
 
 
@@ -375,6 +421,16 @@ body {
     transition: all 0.20s ease;
 }
 
+
+@media (max-width: 500px){
+    .cart-row { 
+        margin-top: 10px;
+    }
+    .btn btn-danger {
+        margin-top: 10px;
+    }
+  }
+
 /* About Page */
 
 .about-profile{
@@ -400,8 +456,16 @@ body {
     border-style: solid;
     border-color: black;
 }
+
+
+@media (max-width: 500px){
+    .about-profile{ 
+        width: 100%
+    }
+  }
 footer {
     display: flex;
+    margin-top: 100px;
     justify-content: center;
     font-family: 'Barlow';
     padding: 5px;
